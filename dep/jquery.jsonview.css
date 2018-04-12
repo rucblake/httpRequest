@@ -1,0 +1,66 @@
+@charset "UTF-8";
+.jsonview {
+    font-family: monospace;
+    font-size: 1.1em;
+    white-space: pre-wrap;
+}
+.jsonview .prop {
+    font-weight: bold;
+}
+.jsonview .null {
+    color: red;
+}
+.jsonview .bool {
+    color: blue;
+}
+.jsonview .num {
+    color: blue;
+}
+.jsonview .string {
+    white-space: pre-wrap; 
+    color: green;
+}
+.jsonview .string.multiline {
+    display: inline-block;
+    vertical-align: text-top;
+}
+.jsonview .collapser {
+    position: absolute;
+    left: -1em;
+    cursor: pointer;
+}
+.jsonview .collapsible {
+    transition: height 1.2s;
+    transition: width 1.2s;
+}
+.jsonview .collapsible.collapsed {
+    display: inline-block;
+    overflow: hidden;
+    width: 1em;
+    height: .8em;
+    margin: 0;
+}
+.jsonview .collapsible.collapsed:before {
+    content: "…";
+    width: 1em;
+    margin-left: .2em;
+}
+.jsonview .collapser.collapsed {
+    transform: rotate(0deg);
+}
+.jsonview .q {
+    display: inline-block;
+    width: 0;
+    color: transparent;
+}
+.jsonview li {
+    position: relative;
+}
+.jsonview ul {
+    margin: 0 0 0 2em;
+    padding: 0; 
+    list-style: none;
+}
+.jsonview h1 {
+    font-size: 1.2em;
+}

@@ -1,0 +1,13 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.tips {
+	margin: 10px 0;
+}
+
+.showJsonData {
+	width: 500px;
+	overflow: auto;
+}
