@@ -6,21 +6,21 @@ $url_file = dirname(__FILE__)."/url";
 if(!empty($_POST['url'])){
 	file_put_contents($url_file, $_POST['url']);
 }
-$url = file_get_contents($url_file);
+$url = $_POST['url'];
 
 //url，默认使用上一次的
 $fields_file = dirname(__FILE__)."/fields";
 if(!empty($_POST['fields'])){
 	file_put_contents($fields_file, $_POST['fields']);
 }
-$fields = file_get_contents($fields_file);
+$fields = $_POST['fields'];
 
 //cookie，默认使用上一次的
 $cookie_file = dirname(__FILE__)."/cookies";
 if(!empty($_POST['cookies'])){
 	file_put_contents($cookie_file, $_POST['cookies']);
 }
-$cookie = file_get_contents($cookie_file);
+$cookie = $_POST['cookies'];
 
 $type = $_POST['type'];
 $origin = $_POST['origin'];

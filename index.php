@@ -1,3 +1,16 @@
+<?php 
+//url，默认使用上一次的
+$url_file = dirname(__FILE__)."/url";
+$url = file_get_contents($url_file);
+
+//url，默认使用上一次的
+$fields_file = dirname(__FILE__)."/fields";
+$fields = file_get_contents($fields_file);
+
+//cookie，默认使用上一次的
+$cookie_file = dirname(__FILE__)."/cookies";
+$cookie = file_get_contents($cookie_file);
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -25,8 +38,8 @@
 						<div class="form-group">
 							 <label for="request-url" class="col-sm-2 control-label">url</label>
 							<div class="col-sm-10">
-								<input type="text" class="form-control" id="request-url" />
-								<p class="tips">url为空默认使用上次保存的</p>
+								<input type="text" class="form-control" id="request-url" value="<?php echo $url; ?>" />
+								<p class="tips">url默认使用上次的</p>
 							</div>
 						</div>
 						<div class="form-group">
@@ -44,15 +57,15 @@
 						<div class="form-group">
 							 <label for="request-cookie" class="col-sm-2 control-label">cookie</label>
 							<div class="col-sm-10">
-								<textarea class="form-control" id="request-cookie" rows='3'></textarea>
-								<p class="tips">cookie为空默认使用上次保存的</p>
+								<textarea class="form-control" id="request-cookie" rows='3' ><?php echo $cookie; ?></textarea>
+								<p class="tips">cookie默认使用上次的</p>
 							</div>
 						</div>
 						<div class="form-group">
 							 <label for="request-fields" class="col-sm-2 control-label">fields</label>
 							<div class="col-sm-10">
-								<textarea class="form-control" id="request-fields" rows='3'></textarea>
-								<p class="tips">fields为空默认使用上次保存的</p>
+								<textarea class="form-control" id="request-fields" rows='3'><?php echo $fields; ?></textarea>
+								<p class="tips">fields默认使用上次的</p>
 							</div>
 						</div>
 						<div class="form-group">
