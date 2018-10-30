@@ -1,15 +1,27 @@
 <?php 
 //url，默认使用上一次的
 $url_file = dirname(__FILE__)."/url";
-$url = file_get_contents($url_file);
+if (file_exists($url_file)) {
+	$url = file_get_contents($url_file);
+} else {
+	$url = '';
+}
 
-//url，默认使用上一次的
+//fields，默认使用上一次的
 $fields_file = dirname(__FILE__)."/fields";
-$fields = file_get_contents($fields_file);
+if (file_exists($fields_file)) {
+	$fields = file_get_contents($fields_file);
+} else {
+	$fields = '';
+}
 
 //cookie，默认使用上一次的
 $cookie_file = dirname(__FILE__)."/cookies";
-$cookie = file_get_contents($cookie_file);
+if (file_exists($cookie_file)) {
+	$cookie = file_get_contents($cookie_file);
+} else {
+	$cookie = '';
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -104,7 +116,7 @@ $cookie = file_get_contents($cookie_file);
 							var data = JSON.parse(jsonData);
 							$('.showJsonData').JSONView(data);
 						}catch(e){
-							$('.showJsonData').html(jsonData);
+							$('.showJsonData').text(jsonData);
 						}
 				        
 					},
